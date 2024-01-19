@@ -1,6 +1,12 @@
-let some:unknown;
-some = 'Text';
+let some: unknown;
+some = "Text";
 let str: string;
-str = some;
+//У цьому коді ви отримаєте помилку на рівні присвоєння str = some;, оскільки тип unknown потребує явного перетворення до типу string. Ви можете використовувати перевірку типу (type checking) та перетворення типу (type casting) для забезпечення безпечного використання unknown
+if (typeof some === "string") {
+  str = some;
+}
 
+//Також можна використовувати операцію узагальнення (type assertion) для явного перетворення типу, якщо ви впевнені, що тип some завжди буде строкою:
+// Використання узагальнення для перетворення типу
+//str = some as string;
 export {};
